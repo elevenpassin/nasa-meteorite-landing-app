@@ -3,10 +3,7 @@ import Link from 'next/link'
 import { Grommet, Heading, Form, FormField, Button, Table, TableHeader, TableRow, TableCell, TableBody } from 'grommet'
 import ReactLoading from 'react-loading';
 
-// function getSuggestions(query) {
-//   console.log('getting suggestions...')
-//   fetch(`search?query=${query}`).then(resp => resp.json()).then(console.log).catch(console.error)
-// }
+
 
 const TableResults = ({ hits }) => {
 
@@ -61,7 +58,6 @@ const TableResults = ({ hits }) => {
 }
 
 export default () => {
-  // const [searchQuery, setSearchQuery] = useState(''); // TODO: Fix empty string bug
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -71,10 +67,6 @@ export default () => {
         Meteorite Landings
       </Heading>
       <Form
-        // onChange={event => {
-        //   setSearchQuery(event.target.value)
-        //   getSuggestions(searchQuery)
-        // }}
         onSubmit={event => {
           setLoading(true);
           fetch(`search?query=${event.value.query}`)
